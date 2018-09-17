@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_140032) do
+ActiveRecord::Schema.define(version: 2018_09_17_014141) do
+
+  create_table "labels", force: :cascade do |t|
+    t.string "name"
+    t.integer "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "role_records", force: :cascade do |t|
     t.string "role_name"
