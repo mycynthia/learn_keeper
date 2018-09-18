@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'carrierwave'
 # pagination
 gem 'kaminari'
+# font awesome icon
+gem 'font-awesome-sass', '~> 5.3.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
 # Use sqlite3 as the database for Active Record
