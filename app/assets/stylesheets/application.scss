@@ -33,7 +33,7 @@ body {
 }
 
 .card-signin {
-  border: 0;
+  border: 1;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   background-color: white;
@@ -47,6 +47,8 @@ body {
 
 .card-signin .card-body {
   padding: 2rem;
+  margin-top: 50px;
+
 }
 
 .form-signin {
@@ -131,4 +133,12 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
+}
+
+.alert-success {
+  margin-top: 5px;
+}
+
+.alert-danger {
+  margin-top: 5px;
 }
