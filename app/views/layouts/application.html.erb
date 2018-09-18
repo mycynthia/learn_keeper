@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html>
-<div class="container">
   <head>
     <title>LearnKeeper</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<!-- user sign in and log in -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <% if current_user %>
-     Hi, <%= current_user.email %>
-      <%= link_to('登出', destroy_user_session_path, method: :delete) %> | 
-      <%= link_to('修改密碼', edit_user_registration_path) %>
-    <% else %>
-      <%= link_to('註冊', new_user_registration_path) %>
-      <%= link_to('登入', new_user_session_path) %>
-    <% end %>
   </head>
   <body>
+<!-- user sign in and log in navigation-->
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Learn Keeper</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to 'Learn Keeper', root_path, :class => 'navbar-brand' %>
+  </div>
+<!-- nav links -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><%= link_to('', '#') %></li>
+          <li><%= link_to('', '#') %></li>
+          <li><%= link_to('', '#') %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+         <% if current_user %>
+            <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
+            <li><%= link_to('My Profile', edit_user_registration_path) %></li>
+          <% else %>
+            <li><%= link_to('Log in', new_user_session_path) %></li>
+            <li><%= link_to('Sign up', new_user_registration_path) %></li>
+          <% end %>
+        </ul>
+      </div>
+     </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+<!-- 提示警語區 -->
+  <% if flash[:notice] %>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-success"><%= notice %></div>
+      </div>
+    </div>
+    <% end %>
+
+    <% if flash[:alert] %>
+    <div class="container">
+      <div class="row">
+        <div class="alert alert-danger"><%= alert %></div>
+      </div>
+    </div>
+    <% end %>
     <%= yield %>
   </body>
-</div>
 </html>
