@@ -15,6 +15,7 @@
 @import 'bootstrap';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'style';
 
 /* User sign in and sign forms. */
 :root {
@@ -141,4 +142,8 @@ body {
 
 .alert-danger {
   margin-top: 5px;
+}
+
+.navbar-right {
+  margin-right: 1px;
 }

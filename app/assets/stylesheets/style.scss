@@ -1,0 +1,50 @@
+//post/index
+.py-5 {
+  padding-bottom: 3rem!important;
+  padding-top: 3rem!important;
+}
+.bg-light {
+  background-color: #e5e9ec!important;
+}
+.bg-dark {
+  background-color: #203b56!important;
+}
+.shadow-sm {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+.small, small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.lge .btn-group {
+  float: right;
+}
+.lge h3 , h5 {
+  color: wheat;
+}
+.lge h5 {
+  text-align: center;
+}
+
+.event-listing {
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+.event-listing em {
+ float: right;
+}
+
+.event-listing-container {
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 1px 30px 1px 30px;
+}
+
+.event-listing-row {
+  padding: 1px 30px 1px 30px;
+}
