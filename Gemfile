@@ -5,6 +5,7 @@ ruby '2.5.1'
 # user sign and log in
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
