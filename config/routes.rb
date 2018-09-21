@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   namespace :admin do 
     root "events#index"
   end
-
+  resources :groups
   resources :users, only: [:show, :edit, :update]
 end
