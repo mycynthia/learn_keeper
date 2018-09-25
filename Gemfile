@@ -57,6 +57,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # JavaScript support
+  gem 'execjs'
+  gem 'therubyracer'
+  # TZInfo::Data contains data from the IANA Time Zone database packaged as Ruby modules for use with TZInfo.
+  gem 'tzinfo-data'
 end
 
 group :test do

@@ -71,4 +71,11 @@ class User < ApplicationRecord
         return user
       end
   end
+
+  has_many :role_records
+  has_many :roles, through: :role_records
+
+  def admin?
+    self.roles.find_by(name: "admin")
+  end
 end
