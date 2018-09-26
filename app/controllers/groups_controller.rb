@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:members, :gphotos]
   def index
     
   end
@@ -15,9 +16,21 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+  def members
+
+  end
+  def gphotos
+    
+  end
+  def aboutgroup
+    
+  end
 
   private
   def group_params
     params.require(:group).permit(:name, :image, :description)
+  end
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
