@@ -1,34 +1,49 @@
 <header>
-  <section>  
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="item active">
-        <%= image_tag("https://via.placeholder.com/1500x400", width:"100%", height:"400px", alt: "First slide", class: "d-block w-100 img-responsive") %>
-          <div class="carousel-caption d-none d-md-block">
-            <h3 class="display-4">First Slide</h3>
-          <p class="lead">This is a description for the first slide.</p>
+  <section>
+    <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="10000" id="bs-carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item slides active">
+          <div class="overlay"></div>
+          <div class="slide-1">
+            <div class="hero">
+              <hgroup>
+                  <h1>Learn Keeper</h1>        
+                  <h3>Get start your group and event</h3>
+              </hgroup>
+              <button class="btn btn-hero btn-lg" role="button">Start a new group</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <%= image_tag("https://via.placeholder.com/1500x400", width:"100%", height:"400px", alt: "Second slide", class: "d-block w-100") %>
-          <div class="carousel-caption d-none d-md-block">
-            <h3 class="display-4">Second Slide</h3>
-            <p class="lead">This is a description for the second slide.</p>
+        <div class="item slides">
+          <div class="overlay"></div>
+          <div class="slide-2"></div>
+          <div class="hero">        
+            <hgroup>
+                <h1>Group Name</h1>        
+                <h3> Event Name</h3>
+            </hgroup>       
+            <button class="btn btn-hero btn-lg" role="button">Start a new group</button>
           </div>
-      </div>
-      <div class="item">
-        <%= image_tag("https://via.placeholder.com/1500x400", width:"100%", height:"400px",alt: "Third slide", class: "d-block w-100") %>
-          <div class="carousel-caption d-none d-md-block">
-            <h3 class="display-4">Third Slide</h3>
-            <p class="lead">This is a description for the third slide.</p>
+        </div>
+        <div class="item slides">
+          <div class="overlay"></div>
+          <div class="slide-3"></div>
+          <div class="hero">        
+            <hgroup>
+                <h1>Group Name</h1>        
+                <h3>Event Name </h3>
+            </hgroup>
+            <button class="btn btn-hero btn-lg" role="button">Start a new group</button>
           </div>
-      </div>
+        </div>
+      </div> 
     </div>
-  </div>
-</section>
+  </section>
 </header>
