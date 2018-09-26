@@ -6,14 +6,13 @@ Rails.application.routes.draw do
     root "groups#index"
   end
   resources :users, only: [:show, :edit, :update]
+
   resources :groups do
     resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
-    member do
-      get :members
-      get :gphotos
-      get :aboutgroup
+      member do
+      get :groupedit_members
+      get :groupedit_photos
+      get :groupedit_about
     end
-
-
   end
 end

@@ -16,13 +16,13 @@ class GroupsController < ApplicationController
       render :new
     end
   end
-  def members
+  def groupedit_members
 
   end
-  def gphotos
+  def groupedit_photos
     
   end
-  def aboutgroup
+  def groupedit_about
     
   end
 
