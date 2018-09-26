@@ -1,0 +1,51 @@
+<div class="bg-light ">
+  <div class="container">
+    <div class="row space">
+<!--left col-->
+      <div class="col-md-3">   
+        <h1 class="text-center">User name</h1>
+          <%= image_tag("https://via.placeholder.com/200x230", width:"200px", height:"230px",alt: "Third slide", class: "d-block w-100") %>
+          <p>Upload a different photo...</p>
+          <p>update avatar</p>
+<!-- left profile -->
+          <ul class="list-group panel panel-default">
+            <li class="list-group-item text-center panel-heading">Profile</li>
+            <li class="list-group-item">User Email</li>
+            <li class="list-group-item">User Location</li>
+            <li class="list-group-item">User introduction
+              <p class="text-sm-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptate!</p>
+            </li>
+          </ul> 
+<!-- left interest -->
+          <ul class="list-group panel panel-default">
+            <li class="list-group-item text-center panel-heading">Interest</li>
+            <li class="list-group-item">label_id</li>
+            <li class="list-group-item">label_id</li>
+            <li class="list-group-item">label_id</li>
+          </ul> 
+<!-- update profile button -->
+        <a class="btn btn-primary" href="#" role="button">Edit</a>
+      </div><!--/col-md-3-->     
+<!-- right all info -->
+      <div class="col-md-9">
+        <div class="row space">
+<!-- right label -->
+        <ul class="nav nav-tabs" id="myTab">
+          <li class="active"><a href="#members" data-toggle="tab">Members</a></li>
+          <li><a href="#gphotos" data-toggle="tab">Group Photos</a></li>
+          <li><a href="#aboutgroup" data-toggle="tab">About Group</a></li>
+        </ul>
+        <div class="tab-content">
+<!-- right members -->
+        <%= render partial: "shared/group_edit/groupedit_members" %>
+<!-- right Group Photos -->
+        <%= render partial: "shared/group_edit/groupedit_photos" %>
+<!-- right About Group -->
+        <%= render partial: "shared/group_edit/groupedit_about" %>
+<!-- right About Group end-->
+        </div><!-- tab-content -->
+        </div><!--/row-->
+      </div><!--/col-9-->
+    </div><!--/row-->
+  </div><!--/con-->
+</div><!--/bf-light-->
