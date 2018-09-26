@@ -12,24 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_09_23_060222) do
 
-  create_table "Users", force: :cascade do |t|
-    t.string "name"
-    t.string "avatar"
-    t.string "location"
-    t.text "introduction"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "fb_uid"
-    t.string "fb_token"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.datetime "timestamps"
@@ -92,6 +74,20 @@ ActiveRecord::Schema.define(version: 2018_09_23_060222) do
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "avatar"
+    t.string "location"
+    t.text "introduction"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fb_uid"
