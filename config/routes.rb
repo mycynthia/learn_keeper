@@ -8,5 +8,4 @@ Rails.application.routes.draw do
   resources :groups do
     resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
   end
-  resources :users, only: [:show, :edit, :update]
 end

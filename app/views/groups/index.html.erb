@@ -1,0 +1,71 @@
+<!-- carousel -->
+<%= render partial: "shared/carousel" %>
+<!-- Popular Events nearby link-->
+<div class="pevent py-5 bg-light">
+  <div class="container">
+    <div class="row">
+<!-- Popular Events nearby link 1-->
+      <%= render partial: "shared/landing_pevent" %>
+<!-- Popular Events nearby link 2-->
+      <%= render partial: "shared/landing_pevent" %>
+<!-- Popular Events nearby link 3-->
+      <%= render partial: "shared/landing_pevent" %>
+<!-- Popular Events nearby link end-->
+    </div>
+  </div>
+</div>
+<!-- Label Group & Event link-->
+<div class="lge py-5 bg-dark">
+<!-- Label Group & Event -->
+  <div class="container">
+    <div class="row">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-info active">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked>Group
+        </label>
+        <label class="btn btn-info">
+          <input type="radio" name="options" id="option2" autocomplete="off"> Event
+        </label>
+      </div>
+    </div>
+  </div>
+<!-- Your Group -->
+  <div class="container">
+    <div class="row">
+      <h3>Your Group</h3>
+        <%= render partial: "shared/landing_group" %>
+        <%= render partial: "shared/landing_group" %>
+        <%= render partial: "shared/landing_group" %>
+    </div>
+  </div>
+<!-- Suggested Group -->
+  <div class="container">
+    <div class="row">
+      <h3>Suggested Group</h3>
+        <%= render partial: "shared/landing_group" %>
+        <%= render partial: "shared/landing_group" %>
+        <%= render partial: "shared/landing_group" %>      
+    </div>
+  </div>
+</div>
+<!-- Going Event -->
+<div class="lge py-5 bg-dark">
+  <div class="container">
+    <div class="row">
+      <h3>Going Event</h3>
+        <%= render partial: "shared/landing_event" %>
+    </div>
+  </div>
+</div>
+<!-- Suggested Event -->
+<div class="lge py-5 bg-dark">
+  <div class="container">
+    <div class="row">
+      <h3>Suggested Event</h3>
+        <%= render partial: "shared/landing_event" %>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<%= render 'layouts/footer' %>

@@ -264,6 +264,12 @@ Devise.setup do |config|
     scope: "public_profile,email",
     info_fields: "email,name",
     callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  google_config = Rails.application.config_for(:google)
+  config.omniauth :google_oauth2,
+    google_config["client_id"],
+    google_config["client_secret"],
+    scope: "profile,userinfo.email",
+    callback_url: "http://localhost:3000/users/auth/google_oauth2/callback"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
