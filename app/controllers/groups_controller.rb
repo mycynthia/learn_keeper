@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:members, :gphotos]
+  before_action :set_group, only: [:members, :gphotos, :show]
   def index
     
   end
@@ -23,6 +23,9 @@ class GroupsController < ApplicationController
     
   end
   def groupedit_about
+    
+  end
+  def show
     
   end
 
