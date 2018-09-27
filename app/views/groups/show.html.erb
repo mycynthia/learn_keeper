@@ -20,178 +20,49 @@
     </div>
 </div><!-- row -->
 <!-- middle -->
-<div class="container">
+<div class="container groupshow">
   <div class="new-row">
-
-      <div data-spy="scroll" class="tabbable-panel">
-        <div class="tabbable-line">
-          <ul class="nav nav-tabs ">
-            <li class="active">
-              <a href="#groupshow_about" data-toggle="tab">About</a>
-            </li>
-            <li>
-              <a href="#tab_default_2" data-toggle="tab">Members</a>
-            </li>
-            <li>
-              <a href="#tab_default_3" data-toggle="tab">Events</a>
-            </li>
-             <li>
-              <a href="#tab_default_4" data-toggle="tab">Comments</a>
-            </li>
-            <li>
-              <a href="#tab_default_5" data-toggle="tab">Photos</a>
-            </li>
-          </ul>
-          <div class="tab-content">
-            <%= render partial: "shared/group_show/groupshow_about" %>
-            <div class="tab-pane" id="tab_default_2">
-              <p>
-                Education& Career
-              </p>
-              <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                     <label for="email">Highest Education:</label>
-                      <p> MBA/PGDM</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-              </div>
-              <div class="col-sm-6">
-                 <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-
-               </div>
-              </div>
-
-             
-           
-            </div>
-            <div class="tab-pane" id="tab_default_3">
-              <p>
-                Family Details
-              </p>
-              <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                     <label for="email">Highest Education:</label>
-                      <p> MBA/PGDM</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-              </div>
-              <div class="col-sm-6">
-                 <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-
-               </div>
-              </div>
-            </div>
-             <div class="tab-pane" id="tab_default_4">
-              <p>
-               Lifestyle
-
-              </p>
-               <div class="row">
-              <div class="col-sm-6">
-                <div class="form-group">
-                     <label for="email">Highest Education:</label>
-                      <p> MBA/PGDM</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-              </div>
-              <div class="col-sm-6">
-                 <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-                  <div class="form-group">
-                     <label for="email">Place of Birth:</label>
-                      <p> pune, maharashtra</p>
-                 </div>
-
-               </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<!-- Nav tabs -->
+  <div class="card">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a>
+        </li>
+        <li role="presentation">
+          <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a>
+        </li>
+        <li role="presentation">
+          <a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a>
+        </li>
+        <li role="presentation">
+          <a href="#members" aria-controls="members" role="tab" data-toggle="tab">Members</a>
+        </li>
+        <li role="presentation">
+          <a href="#photos" aria-controls="photos" role="tab" data-toggle="tab">Photos</a>
+        </li>
+    </ul>
+<!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="lge tab-pane active" id="about">
+        <%= render partial: "shared/group_show/groupshow_about" %>
       </div>
-  
+      <div role="tabpanel" class="tab-pane" id="comments">
+        <%= render partial: "shared/group_show/groupshow_comment" %>
+      </div>
+       <div role="tabpanel" class="tab-pane" id="events">
+        <%= render partial: "shared/group_show/groupshow_events" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="members">
+        <%= render partial: "shared/group_show/groupshow_member" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="photos">
+        <%= render partial: "shared/group_show/groupshow_photos" %>        
+      </div>     
+    </div>
   </div>
-
+  </div>
 </div>
 <!-- under --> 
-
-
-
-
 </div><!-- container -->
 
 <!-- footer -->
