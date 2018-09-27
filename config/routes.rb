@@ -13,6 +13,11 @@ Rails.application.routes.draw do
       get :groupedit_members
       get :groupedit_photos
       get :groupedit_about
+      get :groupshow_about
+      get :groupshow_member
+      get :groupshow_event
+      get :groupshow_comment
+      get :gropushow_photo
     end
   end
 end

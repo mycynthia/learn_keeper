@@ -1,0 +1,69 @@
+<div class="container bg-white">
+  <!-- top -->
+<div class="row">
+    <div class="col-md-7">
+      <%= image_tag("https://loremflickr.com/600/200/brazil,rio",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+    </div>
+    <div class="col-md-5">
+      <h1>Group Name</h1>
+      <h4>Group Address</h4>
+      <div class="col-md-8 text-right gs-1">
+        <br>
+        <br>
+        <br>
+        <br>
+        <span>Organized by Group.username</span>
+      </div>
+      <div class="col-md-3 gs-1">
+        <%= image_tag("https://via.placeholder.com/100x100",  height: "100px", width: "100px" ,alt: "Third slide", class: "d-block w-100") %> <!-- user.avatar -->
+      </div>
+    </div>
+</div><!-- row -->
+<!-- middle -->
+<div class="container groupshow">
+  <div class="new-row">
+<!-- Nav tabs -->
+  <div class="card">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#about" aria-controls="about" role="tab" data-toggle="tab">About</a>
+        </li>
+        <li role="presentation">
+          <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a>
+        </li>
+        <li role="presentation">
+          <a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a>
+        </li>
+        <li role="presentation">
+          <a href="#members" aria-controls="members" role="tab" data-toggle="tab">Members</a>
+        </li>
+        <li role="presentation">
+          <a href="#photos" aria-controls="photos" role="tab" data-toggle="tab">Photos</a>
+        </li>
+    </ul>
+<!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="lge tab-pane active" id="about">
+        <%= render partial: "shared/group_show/groupshow_about" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="comments">
+        <%= render partial: "shared/group_show/groupshow_comment" %>
+      </div>
+       <div role="tabpanel" class="tab-pane" id="events">
+        <%= render partial: "shared/group_show/groupshow_events" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="members">
+        <%= render partial: "shared/group_show/groupshow_member" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="photos">
+        <%= render partial: "shared/group_show/groupshow_photos" %>        
+      </div>     
+    </div>
+  </div>
+  </div>
+</div>
+<!-- under --> 
+</div><!-- container -->
+
+<!-- footer -->
+<%= render 'layouts/footer' %>
