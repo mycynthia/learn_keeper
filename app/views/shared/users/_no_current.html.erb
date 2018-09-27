@@ -1,0 +1,103 @@
+<div class="container">    
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-3 col-xs-12 col-sm-6 col-lg-3">
+        <div class="thumbnail text-center photo_view_postion_b" >
+          <%= image_tag("http://i.pravatar.cc/200",  height: "200px", width: "200px" ,alt: "Third slide", class: "d-block w-100") %>
+        </div>
+      </div>
+      <div class="col-md-9 col-xs-12 col-sm-6 col-lg-9">
+          <div class="" style="border-bottom:1px solid black">
+            <h2>User Name</h2>
+          </div>
+            <hr>
+          <div class="row">
+            <div class="col-md-4">  
+              <p class="text-center">Interest</p>
+            </div>
+            <div class="col-md-8">  
+              <p>user.interest Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, itaque!</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">  
+              <p class="text-center">Introduction</p>
+            </div>
+            <div class="col-md-8">  
+              <p>user.introduction Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, quaerat?</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group row">
+          <div class="col-md-12">
+          <div class="form-group" style="border-bottom:1px solid black">
+              <h2>Events Created</h2>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"> 
+       <div class="col-md-4">
+        <div class="img-event">
+          <%= image_tag("http://placeimg.com/640/360/any",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+        </div>
+        <div class="caption card-body">
+          <h4 class="group card-title inner list-group-item-heading">
+                Event Name</h4>
+            <p class="group inner list-group-item-text">
+              <p class="lead">event.date</p>
+              <h4>event.location</h4>
+              event.contacts
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, corporis, voluptatum? Suscipit sapiente ut ipsum voluptates qui, voluptate quas iste!
+            </p>
+          <div class="row lge">
+            <div class="btn-group">
+              <button class="btn btn-info">Going</button>
+              <button class="btn btn-danger">Not going</button>
+            </div>
+          </div>
+       </div>
+       <div class="col-md-4">
+        <%# render partial: "shared/group_show/groupshow_events" %>       
+       </div>
+       <div class="col-md-4">
+        <%# render partial: "shared/group_show/groupshow_events" %>          
+       </div>
+      </div>
+      
+      <div class="row">
+        <div class="form-group row">
+          <div class="col-md-12">
+              <div class="form-group" style="border-bottom:1px solid black">
+                  <h2>Group Created</h2>
+              </div>
+              <div class="row"> 
+               <div class="col-md-4">
+                <div class="img-event">
+                  <%= image_tag("http://placeimg.com/640/360/any",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+                  <h4 class="group card-title inner text-center">Group Name</h4>
+                </div>
+               </div>
+               <div class="col-md-4">
+                <div class="img-event">
+                  <%= image_tag("http://placeimg.com/640/360/any",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+                  <h4 class="group card-title inner text-center">Group Name</h4>
+                </div>               </div>
+               <div class="col-md-4">
+                <div class="img-event">
+                  <%= image_tag("http://placeimg.com/640/360/any",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+                  <h4 class="group card-title inner text-center">Group Name</h4>
+                </div>               
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- footer -->
+<%= render 'layouts/footer' %>
