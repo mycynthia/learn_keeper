@@ -1,0 +1,23 @@
+<div class="bg-light ">
+  <div class="container">
+    <div class="row space">  
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+          <a href="#emember" data-toggle="tab">Members</a>
+        </li>
+        <li>
+          <a href="#eabout" data-toggle="tab">About Event</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+<!--  members -->
+        <%= render partial: "shared/event_edit/eventedit_members" %>
+<!--  About Group -->
+        <%= render partial: "shared/event_edit/eventedit_about" %>
+<!--  About Group end-->
+        </div><!-- tab-content -->
+    </div><!--/row-->
+  </div><!--/con-->
+</div><!--/bf-light-->
+<!-- footer -->
+<%= render partial: "layouts/footer" %>
