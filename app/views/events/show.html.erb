@@ -1,0 +1,62 @@
+<div class="row bg-light">
+  <section class="es-bg">
+    <div class="container_table">
+      <div class="container_table_cell">
+        <h1>Group Name</h1>
+        <h3>Group Location</h3>
+        <h3>Group xxx members</h3>
+      </div>
+    </div>
+  </section>
+<div class="row new-row">
+  <div class="es">
+    <div class="col-md-3 bg-light">
+      <%= image_tag("https://via.placeholder.com/200x230", width:"100%", height:"200px",alt: "Third slide", class: "d-block w-100") %>
+    </div>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h1>Event Name</h1>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group">
+            <button class="btn btn-info">Going</button>
+            <button class="btn btn-danger">Not going</button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-md-1"></div>
+        <div class="col-md-11">
+         <h4>Event Datetime Saturday, 
+         September 15, 2018 9:30 AM to 4:00 PM</h4> 
+        </div>         
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+         <h4>Event Location Taipei Main Station E1 GateTaipei Main Station E1 Gate · Taipei City</h4> 
+        </div>          
+      </div>
+    </div>
+    <div class="col-md-4">
+      <!-- google map -->
+      <%= image_tag("https://maps.googleapis.com/maps/api/staticmap?center=Albany,+NY&zoom=13&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true", width:"100%", height:"200px",alt: "Third slide", class: "d-block w-100") %>
+    </div>
+  </div>
+</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-white new-row">
+          <h4>event.contacts</h4>           
+          <p>
+            event.description
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Sed ut perspiciatis unde omnis iste natus error sit
+          </p>       
+        </div>   
+      </div>
+    </div><!-- container -->
+</div>
+<!-- footer -->
+<%= render 'layouts/footer' %>
