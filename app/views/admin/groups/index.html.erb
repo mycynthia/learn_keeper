@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row space">
+<!-- label -->
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+          <a href="#auser" data-toggle="tab">User</a>
+        </li>
+        <li>
+          <a href="#agroup" data-toggle="tab">Group</a>
+        </li>
+        <li>
+          <a href="#aevent" data-toggle="tab">Event</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+<!--  User -->
+      <div role="tabpanel" class="lge tab-pane active" id="auser">
+        <%= render partial: "shared/admin/group/admin_user" %>
+      </div>
+<!--  Group -->
+      <div role="tabpanel" class="lge tab-pane active" id="agroup">
+        <%= render partial: "shared/admin/group/admin_group" %>
+      </div>
+<!--  Event -->
+      <div role="tabpanel" class="lge tab-pane active" id="aevent">
+        <%= render partial: "shared/admin/group/admin_event" %>
+      </div>
+        </div><!-- tab-content -->
+        </div><!--/row-->
+
+</div>
+<!-- footer -->
+<%= render  'layouts/footer' %>
