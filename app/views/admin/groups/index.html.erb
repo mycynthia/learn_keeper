@@ -1,34 +1,38 @@
 <div class="container">
-    <div class="row space">
-<!-- label -->
-      <ul class="nav nav-tabs" id="myTab">
-        <li class="active">
-          <a href="#auser" data-toggle="tab">User</a>
-        </li>
-        <li>
-          <a href="#agroup" data-toggle="tab">Group</a>
-        </li>
-        <li>
-          <a href="#aevent" data-toggle="tab">Event</a>
-        </li>
-      </ul>
-
-      <div class="tab-content">
-<!--  User -->
-      <div role="tabpanel" class="lge tab-pane active" id="auser">
-        <%= render partial: "shared/admin/group/admin_user" %>
-      </div>
-<!--  Group -->
-      <div role="tabpanel" class="lge tab-pane active" id="agroup">
-        <%= render partial: "shared/admin/group/admin_group" %>
-      </div>
-<!--  Event -->
-      <div role="tabpanel" class="lge tab-pane active" id="aevent">
-        <%= render partial: "shared/admin/group/admin_event" %>
-      </div>
-        </div><!-- tab-content -->
-        </div><!--/row-->
-
+    <div class="row">
+    <div class="col-md-12">
+      <h3>Admin</h3>
+      <div class="tabbable-panel">
+        <div class="tabbable-line">
+          <ul class="nav nav-tabs ">
+            <li class="active">
+              <a href="#tab_default_1" data-toggle="tab">
+              User </a>
+            </li>
+            <li>
+              <a href="#tab_default_2" data-toggle="tab">
+              Group </a>
+            </li>
+            <li>
+              <a href="#tab_default_3" data-toggle="tab">
+              Event </a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_default_1">
+             <%= render partial: "shared/admin/group/admin_user" %>
+            </div>
+            <div class="tab-pane" id="tab_default_2">
+              <%= render partial: "shared/admin/group/admin_group" %>
+            </div>
+            <div class="tab-pane" id="tab_default_3">
+             <%= render partial: "shared/admin/group/admin_event" %>
+            </div>
+          </div><!-- tab-content -->
+        </div><!-- tabbable-line -->
+      </div><!-- tabbable-panel -->
+    </div>
+  </div>
 </div>
 <!-- footer -->
 <%= render  'layouts/footer' %>

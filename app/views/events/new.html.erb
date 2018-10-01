@@ -1,9 +1,8 @@
 <!-- carousel -->
 <%= render partial: "shared/carousel" %>
 <!-- new-form -->
-<div class="container">
   <div class="row new-row">
-    <div class="col-md-7">
+    <div class="col-md-8">
       <form action="" class="form-horizontal">
         <div class="form-group">
           <label class="col-lg-5 control-label">What's your new event's name ?</label>
@@ -14,14 +13,20 @@
         <div class="form-group">
           <label class="col-lg-5 control-label">What will your event be about ?</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control">
-          </div>
+            <select id="selectbasic" name="selectbasic" class="input-xlarge">
+              <option>Art</option>
+              <option>Computer</option>
+              <option>Sports</option>
+            </select>          </div>
         </div>
         <div class="form-group">
           <label class="col-lg-5 control-label">What's your new group hometown ?</label>
           <div class="col-lg-7">
-            <input type="text" class="form-control">
-          </div>
+            <select id="selectbasic" name="selectbasic" class="input-xlarge">
+              <option>Taipei</option>
+              <option>Hsinchu</option>
+              <option>Kaohsiung</option>
+            </select>           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-5 control-label">What's your event address ?</label>
@@ -37,18 +42,18 @@
         </div>
       </form>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="text-center">
-        <img src="https://via.placeholder.com/400x400" class="avatar img-thumbnail" alt="avatar">
-        <h6>Upload a different photo...</h6>
+        <img src="https://via.placeholder.com/400x300" class="avatar img-thumbnail" alt="avatar">
+        <h6>Add a new event's photo...</h6>
         <input type="file" class="text-center center-block well-sm">
       </div>
     </div>
-    <div class="col-md-12"><br></div>
-    <div class="col-md-11 text-right btn-sg">
-      <input class="btn btn-primary" value="Create your Group" type="button">
+    <div class="col-md-12">
+      <div class="text-center btn-sg">
+        <input class="btn btn-primary" value="Create your event" type="button">
+      </div>
     </div>
   </div>
-</div>
 <!-- footer -->
 <%= render 'layouts/footer' %>

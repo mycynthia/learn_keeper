@@ -1,12 +1,11 @@
-<div class="bg-light ">
+
   <div class="container">
     <div class="row space">
 <!--left col-->
       <div class="col-md-3">   
         <h1 class="text-center">User name</h1>
           <%= image_tag("https://via.placeholder.com/200x230", width:"200px", height:"230px",alt: "Third slide", class: "d-block w-100") %>
-          <p>Upload a different photo...</p>
-          <p>update avatar</p>
+          <p>Upload a different avatar...</p>
 <!-- left profile -->
           <ul class="list-group panel panel-default">
             <li class="list-group-item text-center panel-heading">Profile</li>
@@ -27,119 +26,44 @@
         <a class="btn btn-primary" href="#" role="button">Edit</a>
       </div><!--/col-md-3-->     
 <!-- right all info -->
-      <div class="col-md-9">
-        <div class="row space">
-<!-- right label -->
-        <ul class="nav nav-tabs" id="myTab">
-          <li class="active"><a href="#group" data-toggle="tab">Group</a></li>
-          <li><a href="#join" data-toggle="tab">Join</a></li>
-          <li><a href="#going" data-toggle="tab">Going</a></li>
-          <li><a href="#event" data-toggle="tab">Event</a></li>
-        </ul>
-        <div class="tab-content">
-<!-- right group -->
-          <div class="tab-pane active" id="group">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Group Name</th>
-                    <th>Label</th>
-                    <th>Description</th>
-                    <th>Members count</th>
-                    <th>Members</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                  <%= render partial: "shared/ge_create" %>
-              </table>
-              <hr>
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                  <ul class="pagination" id="myPager"></ul>
-                </div>
-              </div>
-             </div><!--/table-resp-->
-          </div><!--/right group-->
-<!-- right Join -->
-           <div class="tab-pane" id="join">
-             <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Group Name</th>
-                    <th>Label</th>
-                    <th>Description</th>
-                    <th>Members count</th>
-                    <th>Leave</th>
-                  </tr>
-                </thead>
-                  <%= render partial: "shared/ge_going" %>
-              </table>
-              <hr>
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                  <ul class="pagination" id="myPager"></ul>
-                </div>
-              </div>
-             </div><!--/table-resp-->            
-           </div><!--/tab-pane join-->
-<!-- right going -->
-           <div class="tab-pane" id="going">
-             <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Event Name</th>
-                    <th>Label</th>
-                    <th>Description</th>
-                    <th>Members count</th>
-                    <th>Not Going</th>
-                  </tr>
-                </thead>
-                  <%= render partial: "shared/ge_going" %>
-              </table>
-              <hr>
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                  <ul class="pagination" id="myPager"></ul>
-                </div>
-              </div>
-             </div><!--/table-resp-->  
-            </div><!--/going-->  
-<!-- right event -->
-           <div class="tab-pane active" id="event">
-            <div class="table-responsive">
-              <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Event Name</th>
-                    <th>Label</th>
-                    <th>Description</th>
-                    <th>Members count</th>
-                    <th>Members</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                <%= render partial: "shared/ge_create" %>
-              </table>
-              <hr>
-              <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center">
-                  <ul class="pagination" id="myPager"></ul>
-                </div>
-              </div><!--/row-->
-             </div><!--/table-resp-->
-          </div><!--/right event-->
-        </div><!-- tab-content -->
-        </div><!--/row-->
-      </div><!--/col-9-->
-    </div><!--/row-->
-  </div><!--/con-->
-</div><!--/bf-light-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="tabbable-panel">
+              <div class="tabbable-line">
+                <ul class="nav nav-tabs ">
+                  <li class="active">
+                    <a href="#tab_default_1" data-toggle="tab">Join</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_2" data-toggle="tab">Group</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_3" data-toggle="tab">Going</a>
+                  </li>
+                  <li>
+                    <a href="#tab_default_4" data-toggle="tab">Event</a>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="tab_default_1">
+                    <%= render partial: "shared/users/user_join" %>
+                  </div>
+                  <div class="tab-pane" id="tab_default_2">
+                    <%= render partial: "shared/users/user_group" %>
+                  </div>
+                  <div class="tab-pane" id="tab_default_3">
+                    <%= render partial: "shared/users/user_going" %>
+                  </div>
+                     <div class="tab-pane" id="tab_default_4">
+                    <%= render partial: "shared/users/user_event" %>
+                  </div>
+                </div><!-- tab-content -->
+              </div><!-- tabbable-line -->
+            </div><!-- tabbable-panel -->
+          </div><!-- col-md-9 -->
+        </div><!-- row -->
+      </div><!-- container -->
+<!-- right end -->
+    </div><!--row-->
+  </div><!--container-->
