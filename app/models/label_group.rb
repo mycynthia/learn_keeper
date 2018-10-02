@@ -1,0 +1,2 @@
+class LabelGroup < ApplicationRecord
+end
