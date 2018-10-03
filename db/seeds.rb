@@ -8,7 +8,7 @@
 
 # User and role seed data
 User.create!(id: 0, name: "admin", password: "654321", email: "admin@test.com")
-User.create!(id: 1, name: "user1", password: "123456", email: "uesr1@test.com")
+User.create!(id: 1, name: "user1", password: "123456", email: "user1@test.com")
 
 Role.create!(id: 0, name: "admin")
 Role.create!(id: 1, name: "user")
