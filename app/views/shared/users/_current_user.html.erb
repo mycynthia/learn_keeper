@@ -3,16 +3,28 @@
     <div class="row space">
 <!--left col-->
       <div class="col-md-3">   
-        <h1 class="text-center">User name</h1>
+        <h1 class="text-center"><%= @user.name %></h1>
           <%= image_tag("https://via.placeholder.com/200x230", width:"200px", height:"230px",alt: "Third slide", class: "d-block w-100") %>
           <p>Upload a different avatar...</p>
 <!-- left profile -->
           <ul class="list-group panel panel-default">
             <li class="list-group-item text-center panel-heading">Profile</li>
-            <li class="list-group-item">User Email</li>
-            <li class="list-group-item">User Location</li>
-            <li class="list-group-item">User introduction
-              <p class="text-sm-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, voluptate!</p>
+            <li class="list-group-item"><strong>Email:</strong>
+              <p><%= @user.email %></p>
+            </li>
+            <li class="list-group-item"><strong>Location:</strong>
+              <% if @user.location != nil %>
+                <p class="text-sm-left"><%= @user.location %></p>
+              <% else %>
+                <p class="text-muted">No location set yet</p>
+              <% end %>
+            </li>
+            <li class="list-group-item"><strong>Introduction:</strong>
+              <% if @user.introduction != nil %>
+                <p class="text-sm-left"><%= @user.introduction %></p>
+              <% else %>
+                <p class="text-muted">No introduction yet</p>
+              <% end %>
             </li>
           </ul> 
 <!-- left interest -->
