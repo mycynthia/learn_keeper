@@ -12,23 +12,22 @@
                 <%= devise_error_messages! %>
                 <form class="form-signin">
                   <div class="form-label-group">
-                    <%= f.text_field :name, autofocus: true, id: "inputname", class: "form-control", placeholder: "Name"%>
-                    <%= f.label :name, for: "inputname"  %>
+                    <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Name" %>
                   </div>
                   <div class="form-label-group">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email",id: "inputEmail", class: "form-control", placeholder: "Email address" %>
-                    <%= f.label :email,for: "inputEmail" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", \
+                      class: "form-control", placeholder: "Email address" %>
                   </div>
                   <div class="form-label-group">
-                    <%= f.password_field :password, autocomplete: "new-password", id: "inputPassword", class: "form-control", placeholder: "Password"  %>
-                    <%= f.label :password, for: "inputPassword" %>
-                      <% if @minimum_password_length %>
-                       <em><%= @minimum_password_length %> characters minimum.</em>
-                      <% end %><br/>
+                    <%= f.password_field :password, autocomplete: "new-password", \
+                      class: "form-control", placeholder: "Password" %>
+                    <% if @minimum_password_length %>
+                      <em><%= @minimum_password_length %> characters minimum.</em>
+                    <% end %><br/>
                   </div>
                   <div class="form-label-group">
-                    <%= f.password_field :password_confirmation, autocomplete: "new-password", id: "inputPassword", class: "form-control", placeholder: "Password"  %>
-                    <%= f.label :password_confirmation, for: "inputPassword" %>
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", \
+                      class: "form-control", placeholder: "Password Confirmation" %>
                   </div>
                   <%= f.submit "Sign in", class: "btn btn-lg btn-primary btn-block text-uppercase" %>
                   <hr class="my-4">
