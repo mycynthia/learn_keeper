@@ -29,11 +29,11 @@
           </ul> 
 <!-- left interest -->
           <ul class="list-group panel panel-default">
-            <li class="list-group-item text-center panel-heading">Interest</li>
-            <li class="list-group-item">label_id</li>
-            <li class="list-group-item">label_id</li>
-            <li class="list-group-item">label_id</li>
-          </ul> 
+            <li class="list-group-item text-center panel-heading">Interests</li>
+            <% @labels.each do |label| %>
+              <li class="list-group-item"><%= label.name %></li>
+            <% end %>
+          </ul>
 <!-- update profile button -->
         <a class="btn btn-primary" href="#" role="button">Edit</a>
       </div><!--/col-md-3-->     

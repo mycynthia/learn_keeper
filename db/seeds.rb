@@ -17,3 +17,20 @@ RoleRecord.create!(user_id: 0, role_id: 0)
 RoleRecord.create!(user_id: 0, role_id: 1)
 RoleRecord.create!(user_id: 1, role_id: 1)
 
+# Set Labels
+Label.create!(name: "Language")
+Label.create!(name: "Self-Improvement")
+Label.create!(name: "Movies")
+Label.create!(name: "Open Source")
+Label.create!(name: "Video Games")
+Label.create!(name: "Culture Exchange")
+Label.create!(name: "International Friends")
+Label.create!(name: "Fitness")
+Label.create!(name: "Foodie")
+Label.create!(name: "Dining Out")
+
+# Add random instrest labels to all users
+users = User.all
+users.each do |u|
+  u.labels = Label.all.sample(rand(Label.all.length))
+end
