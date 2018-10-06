@@ -11,12 +11,12 @@
               <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <form class="form-signin">
                   <div class="form-label-group">
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email", \
-                      class: "form-control", placeholder: "Email address" %>
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email",id: "inputEmail", class: "form-control", placeholder: "Email address" %>
+                    <%= f.label :email, for: "inputEmail" %>
                   </div>
                   <div class="form-label-group">
-                    <%= f.password_field :password, autocomplete: "current-password", \
-                      class: "form-control", placeholder: "Password" %>
+                    <%= f.password_field :password, autocomplete: "current-password", for: "inputPassword", class: "form-control", placeholder: "Password" %>
+                    <%= f.label :password, for: "inputPassword" %>
                   </div>
                   <div class="custom-control custom-checkbox mb-3">
                     <% if devise_mapping.rememberable? -%>

@@ -15,19 +15,4 @@ namespace :dev do
     end
     puts "now you have #{User.count} users data"
   end
-
-  task fake_users: :environment do
-    User.destroy_all
-
-    100.times do |i|
-      User.create!(name: FFaker::Name.first_name,
-        email: FFaker::Internet.email,
-        password: FFaker::Internet.password,
-        location: FFaker::Address.city,
-        introduction: FFaker::Lorem.paragraph
-      )
-    end
-    puts "have created fake users"
-    puts "now you have #{User.count} user data"
-  end
 end
