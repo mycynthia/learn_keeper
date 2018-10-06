@@ -13,68 +13,37 @@
 
         </tr>
     </thead>
-            <tr>
-                <td>user.id</td>
-                <td class="text-center"><%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %></td>
-                <td>user.name</td>
-                <td>user@email.com</td>
-                <td>user.location</td>
-                <td>
-                    <select name="" id="">
-                        <option>usre</option>
-                        <option>admin</option>
-                    </select>
-                </td>
-                <td class="text-center">
-                    <a class='btn btn-info btn-xs' href="#">
-                    <span class="glyphicon glyphicon-edit"></span>Update</a>
-                </td> 
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
-            <tr>
-                <td>user.id</td>
-                <td class="text-center"><%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %></td>
-                <td>user.name</td>
-                <td>user@email.com</td>
-                <td>user.location</td>
-                <td>
-                    <select name="" id="">
-                        <option>usre</option>
-                        <option>admin</option>
-                    </select>
-                </td>
-                <td class="text-center">
-                    <a class='btn btn-info btn-xs' href="#">
-                    <span class="glyphicon glyphicon-edit"></span>Update</a>
-                </td> 
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
-            <tr>
-                <td>user.id</td>
-                <td class="text-center"><%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %></td>
-                <td>user.name</td>
-                <td>user@email.com</td>
-                <td>user.location</td>
-                <td>
-                    <select name="" id="">
-                        <option>usre</option>
-                        <option>admin</option>
-                    </select>
-                </td>
-                <td class="text-center">
-                    <a class='btn btn-info btn-xs' href="#">
-                    <span class="glyphicon glyphicon-edit"></span>Update</a>
-                </td> 
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
+            <% @user.each do |u| %>
+                <tr>
+                    <td><%= u.id %></td>
+                    <td class="text-center">
+                    <% if u.avatar != nil %>
+                        <%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %>
+                    <% else %>
+                        <%= "" %>
+                    <% end %>
+                    </td>
+                    <td><%= u.name %></td>
+                    <td><%= u.email %></td>
+                    <td><%= u.location %></td>
+                    <td>
+                        <select name="" id="" style="width: 70px">
+                            <% u.roles.each do |r| %>
+                                <option><%= r.name %></option>
+                            <% end %>
+                        </select>
+                    </td>
+                    <td class="text-center">
+                        <%= button_to(user_path(u), class:'btn btn-info btn-xs', :method => :get) do %>
+                            <span class="glyphicon glyphicon-edit">Update</span>
+                        <% end %>
+                    </td>
+                    <td class="text-center">
+                        <%= button_to(user_path(u), class:'btn btn-danger btn-xs', :method => :delete) do %>
+                            <span class="glyphicon glyphicon-remove">Delete</span>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
     </table>
 </div>

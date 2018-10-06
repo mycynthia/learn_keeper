@@ -28,15 +28,18 @@
           <li><%= link_to('', '#') %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-         <% if current_user %>
-          <% if current_user.admin? %>
-            <li><%= link_to 'Admin',admin_root_path %></li>
-          <% end %>
-            <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
+          <% if current_user %>
+            <% if current_user.admin? %>
+              <li><%= link_to 'Admin',admin_root_path %></li>
+            <% end %>
+            <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
             <li><%= link_to('Message') %></li>
             <li><%= link_to('Notifications') %></li>
-            <li><%= link_to('My Profile') %></li>
-            <li><%= image_tag("https://loremflickr.com/40/50/brazil,rio", alt: "", width:"40px", height:"50px", class: "card-img-top") %></li>
+            <li><%= link_to('My Profile', user_path(current_user)) %></li>
+            <li><%= link_to(
+                image_tag("https://loremflickr.com/40/50/brazil,rio", alt: "", width:"40px", height:"50px", \
+                class: "card-img-top"), user_path(current_user)) %>
+            </li>
           <% else %>
             <li><%= link_to('Log in', new_user_session_path) %></li>
             <li><%= link_to('Sign up', new_user_registration_path) %></li>

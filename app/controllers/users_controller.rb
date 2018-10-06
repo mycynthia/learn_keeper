@@ -2,10 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update] 
   def show
     @user = User.find(params[:id])
+    @labels = @user.labels.sort_by { |k| k["name"] }
   end
   def edit
     unless @user == current_user
-      rediredt_to user_path(@user)
+      redirect_to user_path(@user)
     end
   end
   def update
