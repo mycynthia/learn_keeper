@@ -17,10 +17,10 @@
                 <tr>
                     <td><%= u.id %></td>
                     <td class="text-center">
-                    <% if u.avatar != nil %>
-                        <%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %>
+                    <% if u.avatar.url.present? %>
+                        <%= image_tag(u.avatar.url, width:"50px")%>
                     <% else %>
-                        <%= "" %>
+                        <%= image_tag("https://via.placeholder.com/50x50",  height: "50px", width: "50px") %>
                     <% end %>
                     </td>
                     <td><%= u.name %></td>
