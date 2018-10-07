@@ -39,7 +39,7 @@
                         <% end %>
                     </td>
                     <td class="text-center">
-                        <%= button_to(user_path(u), class:'btn btn-danger btn-xs', :method => :delete) do %>
+                        <%= button_to(user_path(u), class:'btn btn-danger btn-xs', :method => :delete, data: { confirm: "You sure?" }) do %>
                             <span class="glyphicon glyphicon-remove">Delete</span>
                         <% end %>
                     </td>

@@ -13,6 +13,20 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path
   end
+  def destroy
+    delete_target_user = User.find(params[:id])
+    delete_target_user_id = delete_target_user.id
+    if current_user.admin? or current_user == delete_target_user
+      if delete_target_user.destroy
+        redirect_to admin_root_path, \
+          notice: "User ID:" + delete_target_user_id.to_s + " has been deleted."
+        # TODO: Display the error message if failed
+      end
+      # TODO: Handler the output of self-deleting
+    else
+      redirect_to root_path, alert: "Not allow!"
+    end
+  end
 
   private
   def set_user
