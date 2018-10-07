@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create users and roles
-User.create!(name: "admin", password: "654321", email: "admin@test.com")
-User.create!(name: "user1", password: "123456", email: "user1@test.com")
+User.create!(name: "admin", password: "654321", email: "admin@test.com", location: "Taipei")
+User.create!(name: "user1", password: "123456", email: "user1@test.com", location: "Hsinchu")
 
 Role.destroy_all
 Role.create!(name: "admin")
