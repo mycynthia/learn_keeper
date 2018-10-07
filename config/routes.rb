@@ -20,4 +20,10 @@ Rails.application.routes.draw do
       get :gropushow_photo
     end
   end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :groups, except: [:new]
+    end
+  end
 end
