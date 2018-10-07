@@ -65,6 +65,8 @@ group :development do
   # TZInfo::Data contains data from the IANA Time Zone database packaged as Ruby modules for use with TZInfo.
   gem 'tzinfo-data'
   gem 'ffaker'
+  gem 'webpacker', '~> 3.0'
+  gem 'foreman'
 end
 
 group :test do
