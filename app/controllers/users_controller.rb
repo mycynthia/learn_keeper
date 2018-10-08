@@ -5,7 +5,8 @@ class UsersController < ApplicationController
     @labels = @user.labels.sort_by { |k| k["name"] }
   end
   def edit
-    unless @user == current_user
+    unless current_user.admin? or @user == current_user
+      flash[:alert] = "Not allow!"
       redirect_to user_path(@user)
     end
   end
