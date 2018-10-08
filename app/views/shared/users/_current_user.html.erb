@@ -38,7 +38,7 @@
             <% end %>
           </ul>
 <!-- update profile button -->
-        <a class="btn btn-primary" href="#" role="button">Edit</a>
+        <%= button_to("Edit", edit_user_path(@user), :method => :get, :class => "btn btn-primary") %>
       </div><!--/col-md-3-->     
 <!-- right all info -->
       <div class="container">
