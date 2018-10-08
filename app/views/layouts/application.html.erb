@@ -36,10 +36,17 @@
             <li><%= link_to('Message') %></li>
             <li><%= link_to('Notifications') %></li>
             <li><%= link_to('My Profile', user_path(current_user)) %></li>
-            <li><%= link_to(
-                image_tag("https://loremflickr.com/40/50/brazil,rio", alt: "", width:"40px", height:"50px", \
-                class: "card-img-top"), user_path(current_user)) %>
-            </li>
+            <% if current_user.avatar.url.present? %>
+                <li><%= link_to(
+                    image_tag(current_user.avatar.url, alt: "", width:"40px", height:"40px", \
+                        class: "card-img-top"), user_path(current_user)) %>
+                </li>
+            <% else %>
+                <li><%= link_to(
+                    image_tag("https://via.placeholder.com/40x40", width:"40px", height:"40px", \
+                        class: "card-img-top"), user_path(current_user)) %>
+                </li>
+            <% end %>
           <% else %>
             <li><%= link_to('Log in', new_user_session_path) %></li>
             <li><%= link_to('Sign up', new_user_registration_path) %></li>
