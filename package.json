@@ -6,7 +6,7 @@
     "axios": "^0.18.0",
     "vue": "^2.5.17",
     "vue-loader": "14.2.2",
-    "vue-select": "^2.5.1",
+    "vue-select": "2.4.0",
     "vue-template-compiler": "^2.5.17",
     "vue-turbolinks": "^2.0.3"
   },
