@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       get :groupshow_member
       get :groupshow_event
       get :groupshow_comment
-      get :gropushow_photo
+      get :groupshow_photo
     end
   end
 end
