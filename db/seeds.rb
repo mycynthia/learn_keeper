@@ -50,5 +50,14 @@ groups.each do |g|
   g.labels = Label.all.sample(rand(Label.all.length))
 end
 
+# Add random group ID to every event
+events = Event.all
+events.each do |e|
+  e.group_id = Group.all.sample().id
+end
+events.each do |e|
+  e.save
+end
+
 puts
 puts "Seed data generated"
