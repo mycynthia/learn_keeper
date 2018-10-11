@@ -44,5 +44,11 @@ users.each do |u|
   u.labels = Label.all.sample(rand(Label.all.length))
 end
 
+# Add random labels to all groups
+groups = Group.all
+groups.each do |g|
+  g.labels = Label.all.sample(rand(Label.all.length))
+end
+
 puts
 puts "Seed data generated"
