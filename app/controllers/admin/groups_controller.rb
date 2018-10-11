@@ -3,5 +3,6 @@ class Admin::GroupsController < ApplicationController
   def index
     @user = User.all
     @groups = Group.all
+    @events = Event.all
   end
 end
