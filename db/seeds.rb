@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Create users and roles
-User.create!(name: "admin", password: "654321", email: "admin@test.com")
-User.create!(name: "user1", password: "123456", email: "user1@test.com")
+User.create!(name: "admin", password: "654321", email: "admin@test.com", location: "Taipei")
+User.create!(name: "user1", password: "123456", email: "user1@test.com", location: "Hsinchu")
 
 Role.destroy_all
 Role.create!(name: "admin")
@@ -42,6 +42,21 @@ Label.create!(name: "Dining Out")
 users = User.all
 users.each do |u|
   u.labels = Label.all.sample(rand(Label.all.length))
+end
+
+# Add random labels to all groups
+groups = Group.all
+groups.each do |g|
+  g.labels = Label.all.sample(rand(Label.all.length))
+end
+
+# Add random group ID to every event
+events = Event.all
+events.each do |e|
+  e.group_id = Group.all.sample().id
+end
+events.each do |e|
+  e.save
 end
 
 puts

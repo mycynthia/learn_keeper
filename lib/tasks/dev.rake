@@ -30,4 +30,29 @@ namespace :dev do
     puts "have created fake users"
     puts "now you have #{User.count} user data"
   end
+
+  task fake_groups: :environment do
+    Group.destroy_all
+
+    60.times do |i|
+      Group.create!(name: FFaker::Skill.specialty,
+        image: FFaker::Image.url,
+        description: FFaker::Lorem.paragraph,
+        location: FFaker::Address.city
+      )
+    end
+    puts "have created fake groups"
+    puts "now you have #{Group.count} group data"
+  end
+
+  task fake_events: :environment do
+    Event.destroy_all
+
+    80.times do |i|
+      Event.create!(name: FFaker::Skill.specialty
+      )
+    end
+    puts "have created fake events"
+    puts "now you have #{Event.count} event data"
+  end
 end

@@ -76,6 +76,8 @@ class User < ApplicationRecord
   has_many :roles, through: :role_records
   has_and_belongs_to_many :labels
 
+  mount_uploader :avatar, AvatarUploader
+
   def admin?
     self.roles.find_by(name: "admin")
   end

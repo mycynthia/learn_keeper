@@ -4,41 +4,36 @@
         <tr >
             <th class="text-center">Group ID</th>
             <th class="text-center">Group Name</th>
-            <th class="text-center">Label</th>
-            <th class="text-center">Member's Count</th>
+            <th class="text-center">Location</th>
+            <th class="text-center">Labels</th>
+            <th class="text-center">Update</th>
             <th class="text-center">Delete</th>
 
         </tr>
     </thead>
+        <% @groups.each do |group| %>
             <tr>
-                <td>group.id</td>
-                <td>group.name</td>
-                <td>group.label</td>
-                <td>group.member.count</td>
+                <td><%= group.id %></td>
+                <td><%= group.name %></td>
+                <td><%= group.location %></td>
                 <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
+                    <select name="" id="" style="width: 70px">
+                        <% group.labels.each do |label| %>
+                            <option><%= label.name %></option>
+                        <% end %>
+                    </select>
+                </td>
+                <td class="text-center">
+                    <%= button_to(edit_group_path(group), class:"btn btn-info btn-xs", :method => :get) do %>
+                        <span class="glyphicon glyphicon-edit">Update</span>
+                    <% end %>
+                </td>
+                <td class="text-center">
+                    <%= button_to(group_path(group), class:"btn btn-danger btn-xs", :method => :delete, data: { confirm: "You sure?" }) do %>
+                        <span class="glyphicon glyphicon-remove">Delete</span>
+                    <% end %>
                 </td>
             </tr>
-            <tr>
-                <td>group.id</td>
-                <td>group.name</td>
-                <td>group.label</td>
-                <td>group.member.count</td>
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
-            <tr>
-                <td>group.id</td>
-                <td>group.name</td>
-                <td>group.label</td>
-                <td>group.member.count</td>
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
+        <% end %>
     </table>
 </div>
