@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
   def update
     @user.update(user_params)
-    redirect_to user_path
+    redirect_to user_path(@user)
   end
   def destroy
     delete_target_user = User.find(params[:id])
@@ -29,11 +29,13 @@ class UsersController < ApplicationController
     end
   end
 
+  # password_confirmation
+
   private
   def set_user
     @user = User.find(params[:id])
   end
   def user_params
-    params.require(:user).permit(:name, :avatar)
+    params.require(:user).permit(:name, :avatar, :location, :introduction)
   end
 end
