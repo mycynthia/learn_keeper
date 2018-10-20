@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   end
   def new
     @group = Group.new
+    @labels = Label.all
   end
   def create
     @group = Group.new(group_params)

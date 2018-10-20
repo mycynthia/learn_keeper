@@ -1,38 +1,40 @@
 <!-- carousel -->
+<% content_for :header do %>
+  <%= javascript_pack_tag 'groups/new' %>
+<% end %>
 <%= render partial: "shared/carousel" %>
+<div id='app'>
   <div class="row new-row">
     <div class="col-md-7">
       <form action="" class="form-horizontal">
         <div class="form-group">
           <label class="col-md-6 control-label">What's your new group name ?</label>
           <div class="col-md-6">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" v-model="groupName">
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-6 control-label">What's your new group hometown ?</label>
           <div class="col-md-6">
-            <select id="selectbasic" name="selectbasic" class="input-xlarge">
-              <option>Taipei</option>
-              <option>Hsinchu</option>
-              <option>Kaohsiung</option>
-            </select>          
+            <v-select v-model="selectedLocation" :options="locations" class="select2"></v-select>
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-6 control-label">What will your group be about ?</label>
           <div class="col-md-6">
-            <select id="selectbasic" name="selectbasic" class="input-xlarge">
-              <option>Art</option>
-              <option>Computer</option>
-              <option>Sports</option>
-            </select>            
+            <v-select multiple
+                      v-model="selectedLabels"
+                      label="name"
+                      value="id"
+                      :options="labels"
+                      class="select2"
+                      @search:focus="getLabels"></v-select>
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-6 control-label">Describe who should join and your group will do.</label>
           <div class="col-md-6">
-            <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+            <textarea class="form-control" id="" cols="30" rows="10" v-model="groupDescription"></textarea>
           </div>
         </div>
       </form>
@@ -41,12 +43,49 @@
       <div class="text-center">
         <img src="https://via.placeholder.com/400x300" class="avatar img-thumbnail" alt="avatar">
         <h6>Add a new group's photo...</h6>
-        <input type="file" class="text-center center-block well well-sm">
+        <input type="file" class="text-center center-block well well-sm" @change="selectedFile">
       </div>
     </div>
     <div class="col-md-12 text-center btn-sg">
-      <input class="btn btn-primary" value="Strat a Group" type="button">
+      <input class="btn btn-primary" value="Strat a Group" data-toggle="modal" data-target="#myModal" type="button">
     </div>
   </div>
+  <!-- Create group confirmation Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+        </div>
+        <div class="modal-body">
+          <dl>
+            <dt>Group Name</dt>
+            <dd>{{groupName}}</dd>
+            <dt>Group Hometown</dt>
+            <dd>{{selectedLocation}}</dd>
+            <dt>Description</dt>
+            <dd><pre>{{groupDescription}}</pre></dd>
+            <dt>Group Labels</dt>
+            <dd>
+              <ul class="list-inline">
+                <li v-for="label in selectedLabels" :key="label.id">
+                  {{label.name}}
+                </li>
+              </ul>
+            </dd>
+            <dt>Group Image</dt>
+            <dd>{{fileLocation.name }}</dd>
+
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" @click="createGroup">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- footer -->
 <%= render 'layouts/footer' %>
