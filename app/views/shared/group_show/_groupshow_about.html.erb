@@ -13,6 +13,8 @@
     </div>
   <br>
   <% if canJoin %>
-    <a class="btn btn-primary btn-group" href="#" role="button">Join us</a>
+    <%= link_to "Join us", join_group_path(@group), method: :post, class: "btn btn-primary btn-group" %>
+  <% else %>
+    <%= link_to "Leave Group", leave_group_path(@group), method: :post, class: "btn btn-primary btn-group" %>
   <% end %>
   <br>
