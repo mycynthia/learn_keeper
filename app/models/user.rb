@@ -8,7 +8,7 @@ class User < ApplicationRecord
   # devise add name column must exist
   validates_presence_of :name
   has_many :group_records
-  has_many :groups, through :group_records
+  has_many :groups, through: :group_records
   
   def self.from_omniauth(auth, provider)
       puts "Facebook"
