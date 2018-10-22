@@ -52,7 +52,6 @@ class GroupsController < ApplicationController
     else
       @canJoin = false
     end
-    @group_users = @group.users
   end
 
   private

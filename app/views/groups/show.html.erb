@@ -53,7 +53,7 @@
         <%= render partial: "shared/group_show/groupshow_events" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="members">
-        <%= render partial: "shared/group_show/groupshow_member" %>
+        <%= render partial: "shared/group_show/groupshow_member", locals:{group_users:@group.users} %>
       </div>
       <div role="tabpanel" class="tab-pane" id="photos">
         <%= render partial: "shared/group_show/groupshow_photos" %>        
