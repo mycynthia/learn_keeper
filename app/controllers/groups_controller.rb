@@ -27,7 +27,12 @@ class GroupsController < ApplicationController
     
   end
   def show
-    
+    obj = GroupRecord.where(group:@group,user:current_user)
+    if obj.size < 1
+      @canJoin = true
+    else
+      @canJoin = false
+    end
   end
 
   private
