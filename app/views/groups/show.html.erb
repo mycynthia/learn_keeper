@@ -2,17 +2,17 @@
   <!-- top -->
 <div class="row">
     <div class="col-md-7">
-      <%= image_tag("https://loremflickr.com/600/200/brazil,rio",  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+      <%= image_tag(@group.image.url.to_s,  height:"200",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
     </div>
     <div class="col-md-5">
-      <h1>Group Name</h1>
-      <h4>Group Address</h4>
+      <h1><%= @group.name %></h1>
+      <h4><%= @group.location %></h4>
       <div class="col-md-8 text-right gs-1">
         <br>
         <br>
         <br>
         <br>
-        <span>Organized by Group.username</span>
+        <span>Organized by <%= @group.user.name %></span>
       </div>
       <div class="col-md-3 gs-1">
         <%= image_tag("https://via.placeholder.com/100x100",  height: "100px", width: "100px" ,alt: "Third slide", class: "d-block w-100") %> <!-- user.avatar -->
@@ -44,7 +44,7 @@
 <!-- Tab panes -->
     <div class="tab-content">
       <div role="tabpanel" class="lge tab-pane active" id="about">
-        <%= render partial: "shared/group_show/groupshow_about" %>
+        <%= render partial: "shared/group_show/groupshow_about", locals:{group:@group,canJoin:@canJoin} %>
       </div>
       <div role="tabpanel" class="tab-pane" id="comments">
         <%= render partial: "shared/group_show/groupshow_comment" %>
@@ -53,7 +53,7 @@
         <%= render partial: "shared/group_show/groupshow_events" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="members">
-        <%= render partial: "shared/group_show/groupshow_member" %>
+        <%= render partial: "shared/group_show/groupshow_member", locals:{group_users:@group.users} %>
       </div>
       <div role="tabpanel" class="tab-pane" id="photos">
         <%= render partial: "shared/group_show/groupshow_photos" %>        

@@ -1,21 +1,20 @@
   <br>
-  <h1>Hello,username!</h1>
+  <h1>Hello,<%= current_user.name %>!</h1>
   <br>
-  <%= image_tag("http://placeimg.com/640/360/any",  height:"300",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
+  <%= image_tag(group.image.url.to_s,  height:"300",width: "100%" ,alt: "Third slide", class: "d-block w-100") %>
   <br>
     <div class="row">
       <h2>Group-Description</h2>
       <br>
       <p>
-        group-description
-        About her family she belongs to a religious and a well cultural family background. 
-        Father - Retired from a Co-operate Bank as a Manager. 
-        Mother - she is a home maker. 
-        1 younger brother - works for Life Insurance n manages cluster. 
+        <%= group.description %>
       </p>
-      <p>I have done PG in Human Resourses</p>
-      <p>At present Working in Insurance sector</p>
-    </div> 
+      <%= canJoin.to_s %>
+    </div>
   <br>
-  <a class="btn btn-primary btn-group" href="#" role="button">Join us</a>
+  <% if canJoin %>
+    <%= link_to "Join us", join_group_path(@group), method: :post, class: "btn btn-primary btn-group" %>
+  <% else %>
+    <%= link_to "Leave Group", leave_group_path(@group), method: :post, class: "btn btn-primary btn-group" %>
+  <% end %>
   <br>

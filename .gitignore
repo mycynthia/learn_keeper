@@ -24,6 +24,8 @@
 /yarn-error.log
 
 /public/assets
+#ignore carrierwave upload target folder
+/public/uploads
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
@@ -35,3 +37,4 @@ config/google.yml
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+/.vscode

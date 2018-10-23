@@ -17,7 +17,20 @@ Rails.application.routes.draw do
       get :groupshow_member
       get :groupshow_event
       get :groupshow_comment
-      get :groupshow_photo
+      get :gropushow_photo
+      post :join
+      post :leave
+    end
+  end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :groups, except: [:new] do
+        member do
+          post :join
+        end
+      end
+      resources :labels, except: [:new]
     end
   end
 end

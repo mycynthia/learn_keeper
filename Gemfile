@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
