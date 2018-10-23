@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     root "groups#index"
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :destroy]
 
   resources :groups do
     resources :events, only: [:new, :create, :show, :edit, :update, :destroy]

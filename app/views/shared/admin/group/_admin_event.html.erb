@@ -4,41 +4,28 @@
         <tr >
             <th class="text-center">Event ID</th>
             <th class="text-center">Event Name</th>
-            <th class="text-center">Label</th>
-            <th class="text-center">Member's Count</th>
+            <th class="text-center">Attendee Count</th>
+            <th class="text-center">Update</th>
             <th class="text-center">Delete</th>
 
         </tr>
     </thead>
+        <% @events.each do |event| %>
             <tr>
-                <td>event.id</td>
-                <td>event.name</td>
-                <td>event.label</td>
-                <td>event.member.count</td>
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
+                <td><%= event.id %></td>
+                <td><%= event.name %></td>
+                <td><%= event.attendees_count %></td>
+                <td class="text-center">
+                    <%= button_to(edit_group_event_path(event.group_id, event), class:"btn btn-info btn-xs", :method => :get) do %>
+                        <span class="glyphicon glyphicon-edit">Update</span>
+                    <% end %>
+                </td>
+                <td class="text-center">
+                    <%= button_to(group_event_path(event.group_id, event), class:"btn btn-danger btn-xs", :method => :delete, data: { confirm: "You sure?" }) do %>
+                        <span class="glyphicon glyphicon-remove">Delete</span>
+                    <% end %>
                 </td>
             </tr>
-            <tr>
-                <td>event.id</td>
-                <td>event.name</td>
-                <td>event.label</td>
-                <td>event.member.count</td>
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
-            <tr>
-                <td>event.id</td>
-                <td>event.name</td>
-                <td>event.label</td>
-                <td>event.member.count</td>
-                <td>
-                    <a href="#" class="btn btn-danger btn-xs">
-                    <span class="glyphicon glyphicon-remove"></span> Del</a>
-                </td>
-            </tr>
+        <% end %>
     </table>
 </div>

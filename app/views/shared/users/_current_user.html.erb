@@ -4,8 +4,11 @@
 <!--left col-->
       <div class="col-md-3">   
         <h1 class="text-center"><%= @user.name %></h1>
-          <%= image_tag("https://via.placeholder.com/200x230", width:"200px", height:"230px",alt: "Third slide", class: "d-block w-100") %>
-          <p>Upload a different avatar...</p>
+          <% if @user.avatar.url.present? %>
+            <%= image_tag(@user.avatar.url, width:"240px", alt: "Third slide", class: "d-block w-100")%>
+          <% else %>
+            <%= image_tag("https://via.placeholder.com/200x230", width:"240px", alt: "Third slide", class: "d-block w-100") %>
+          <% end %>
 <!-- left profile -->
           <ul class="list-group panel panel-default">
             <li class="list-group-item text-center panel-heading">Profile</li>
@@ -35,7 +38,7 @@
             <% end %>
           </ul>
 <!-- update profile button -->
-        <a class="btn btn-primary" href="#" role="button">Edit</a>
+        <%= button_to("Edit", edit_user_path(@user), :method => :get, :class => "btn btn-primary") %>
       </div><!--/col-md-3-->     
 <!-- right all info -->
       <div class="container">

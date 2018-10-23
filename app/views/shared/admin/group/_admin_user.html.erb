@@ -17,10 +17,12 @@
                 <tr>
                     <td><%= u.id %></td>
                     <td class="text-center">
-                    <% if u.avatar != nil %>
-                        <%= image_tag("http://i.pravatar.cc/50",  height: "50px", width: "50px" ,alt: "Third slide", class: "d-block w-100") %>
-                    <% else %>
-                        <%= "" %>
+                    <%= link_to user_path(u.id) do %>
+                        <% if u.avatar.url.present? %>
+                            <%= image_tag(u.avatar.url, height: "50px", width: "50px")%>
+                        <% else %>
+                            <%= image_tag("https://via.placeholder.com/50x50", height: "50px", width: "50px") %>
+                        <% end %>
                     <% end %>
                     </td>
                     <td><%= u.name %></td>
@@ -34,12 +36,12 @@
                         </select>
                     </td>
                     <td class="text-center">
-                        <%= button_to(user_path(u), class:'btn btn-info btn-xs', :method => :get) do %>
+                        <%= button_to(edit_user_path(u), class:'btn btn-info btn-xs', :method => :get) do %>
                             <span class="glyphicon glyphicon-edit">Update</span>
                         <% end %>
                     </td>
                     <td class="text-center">
-                        <%= button_to(user_path(u), class:'btn btn-danger btn-xs', :method => :delete) do %>
+                        <%= button_to(user_path(u), class:'btn btn-danger btn-xs', :method => :delete, data: { confirm: "You sure?" }) do %>
                             <span class="glyphicon glyphicon-remove">Delete</span>
                         <% end %>
                     </td>
